@@ -1,0 +1,29 @@
+int moveX, moveY, dragX, dragY, movX, movY, desX, desY;
+
+void setup() {
+size(400, 400);
+smooth();
+noStroke();
+}
+
+void draw() {
+background(204);
+fill(0);
+ellipse(100, 100 ,movX, movX); //elipse negro
+fill(255,255,0);
+ellipse(300, 300, desX, desX); //elipse amarillo
+fill(255,0,0);
+ellipse(moveX, moveY, 33, 33); //elipse rojo
+fill(80,200,245);
+ellipse(dragX, dragY, 33, 33); //elipse celeste
+
+}
+
+void mouseMoved() {
+movX = mouseX;           //movimiento elipse negro eje X
+desX = mouseX;          //movimiento elipse amarillo eje X
+moveX = mouseY;        //movimiento elipse rojo eje Y
+moveY = 250;
+dragX = width-mouseY;  //movimiento elipse celeste eje Y
+dragY = 150;
+}
